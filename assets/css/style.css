@@ -1,12 +1,14 @@
+/* General Body Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #fff;
-    background: linear-gradient(135deg, #2b2d42 0%, #333 100%);
+    background: url('../images/HomePageBG3.jpg') no-repeat center center/cover; /* Main background image */
 }
 
+/* Header Styles */
 header {
     background: linear-gradient(135deg, #222 0%, #2b2d42 100%);
     text-align: center;
@@ -19,6 +21,7 @@ header {
     margin: auto;
 }
 
+/* Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
@@ -44,33 +47,49 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
+/* Main Section Styles */
 main {
     text-align: center;
     padding: 50px 20px;
-    background-color: #f4f4f4;
-    transition: background-color 0.5s ease;
     color: #333;
 }
 
+/* Section Specific Styles */
 section {
     margin-bottom: 20px;
-    transition: transform 0.5s ease;
-}
-
-.intro, .featured-projects {
-    background: #fff url('assets/images/HomePageBG.jpg') no-repeat center center/cover; /* Adjusted */
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background for text sections */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
-    color: #333; /* Ensure text visibility */
-    text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.7); /* For text readability */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjusts the spacing between elements */
 }
 
+.intro .content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.intro img {
+    width: 35%; /* Adjust image width as necessary */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+    margin-right: 30px; /* Ensures space between the image and text */
+}
+
+.intro .text {
+    width: 60%; /* Adjust text width as necessary */
+    text-align: left;
+    font-size: 1.2em; /* Larger font size for better readability */
+}
+
+/* Hover Effects for Sections */
 .intro:hover, .featured-projects:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
+/* Footer Styles */
 footer {
     background: #222;
     color: #fff;
@@ -82,9 +101,19 @@ footer {
     width: 100%;
 }
 
+/* Responsive Design Adjustments */
 @media (max-width: 600px) {
     nav ul li {
         display: block;
         margin-bottom: 10px;
+    }
+
+    .intro, .featured-projects {
+        flex-direction: column;
+    }
+
+    .intro img, .intro .text {
+        width: 100%;
+        margin-right: 0;
     }
 }
